@@ -15,4 +15,6 @@ public class AppNetConfig {
     public static final String LOGIN = BASEURL + "login.json";
 
     public static final String PRODUCT = BASEURL + "product.json";
+
+    public static final String IMG = BASEURL + "tx.jpg";
 }

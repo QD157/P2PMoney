@@ -1,7 +1,5 @@
 package com.example.wyf.p2pmoney;
 
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -14,13 +12,13 @@ import com.example.wyf.p2pmoney.fragment.HomeFragment;
 import com.example.wyf.p2pmoney.fragment.MeFragment;
 import com.example.wyf.p2pmoney.fragment.MoreFragment;
 import com.example.wyf.p2pmoney.fragment.TouziFragment;
+import com.example.wyf.p2pmoney.global.BaseActivity;
 import com.example.wyf.p2pmoney.utils.UIUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.iv_home)
     ImageView ivHome;
@@ -56,11 +54,18 @@ public class MainActivity extends FragmentActivity {
     private FragmentTransaction ft;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    protected void initData() {
         selected(0);
+    }
+
+    @Override
+    protected void initTitle() {
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
     }
 
     @OnClick({R.id.ll_home, R.id.ll_touzi, R.id.ll_me, R.id.ll_more})

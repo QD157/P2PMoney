@@ -2,6 +2,9 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="divider_line">#e1e1e1</color>
+    <color name="my_title_bg">#28baed</color>
+    <color name="product_red_common">#e84768</color>
     <color name="colorAccent">#FF4081</color>
     <color name="product_detail_common">#666666</color>
     <color name="back_blue">#2f82c8</color>

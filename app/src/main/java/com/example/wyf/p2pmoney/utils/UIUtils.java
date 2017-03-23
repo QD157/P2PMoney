@@ -2,6 +2,7 @@ package com.example.wyf.p2pmoney.utils;
 
 import android.content.Context;
 import android.os.Handler;
+import android.os.Process;
 import android.view.View;
 
 import com.example.wyf.p2pmoney.global.MyApplication;
@@ -40,5 +41,18 @@ public class UIUtils {
     public static int px2dip(int px){
         float density = getContext().getResources().getDisplayMetrics().density;
         return (int)(px/density);
+    }
+
+    public static void runOnUIThread(Runnable r){
+        if (isInMainThread()) {
+            r.run();
+        }else{
+            getHandler().post(r);
+        }
+    }
+
+    private static boolean isInMainThread() {
+        int tid = Process.myTid();
+        return tid == MyApplication.mainThreadId;
     }
 }
